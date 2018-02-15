@@ -31,6 +31,13 @@ public:
 	cDropperEntity(BLOCKTYPE a_BlockType, NIBBLETYPE a_BlockMeta, int a_BlockX, int a_BlockY, int a_BlockZ, cWorld * a_World);
 
 protected:
+    //TODO document maybe???? (copied from HopperEntity code)
+    bool GetOutputBlockPos(NIBBLETYPE a_BlockMeta, int & a_OutputX, int & a_OutputY, int & a_OutputZ);
+    bool MoveItemsToChest(cChunk & a_Chunk, int a_BlockX, int a_BlockY, int a_BlockZ);
+    bool MoveItemsToFurnace(cChunk & a_Chunk, int a_BlockX, int a_BlockY, int a_BlockZ, NIBBLETYPE a_HopperMeta);
+    bool MoveItemsToGrid(cBlockEntityWithItems & a_Entity);
+    bool MoveItemsToSlot(cBlockEntityWithItems & a_Entity, int a_DstSlotNum);
+
 	// cDropSpenserEntity overrides:
 	virtual void DropSpenseFromSlot(cChunk & a_Chunk, int a_SlotNum) override;
 
